@@ -1,6 +1,36 @@
-# Install SonarQube 
-## Sonarqube requirements
-Download SonarQube
+# Install SonarQube for Production
+## Description
+This repo is for reference to install SonarQube for Production environment using PostgreSQL
+
+<table>
+	<thead>
+		<tr>
+			<th></th>
+			<th>URL</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Install Docs</td>
+			<td>https://docs.sonarqube.org/latest/setup/install-server/</td>
+		</tr>
+		<tr>
+			<td>Hardware Recommendations</td>
+			<td>https://docs.sonarqube.org/latest/setup/install-server/</td>
+		</tr>
+		<tr>
+			<td>Requirements</td>
+			<td>https://docs.sonarqube.org/latest/requirements/requirements/</td>
+		</tr>
+		<tr>
+			<td>Download/td>
+			<td>https://www.sonarqube.org/downloads/</td>
+		</tr>
+	</tbody>
+</table> 
+
+## Download Sonarqube 
+Download SonarQube from https://www.sonarqube.org/downloads/
 ```
 cd /opt
 wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.4.1.35646.zip
