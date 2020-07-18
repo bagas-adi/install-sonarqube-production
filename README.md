@@ -118,12 +118,12 @@ sonarqube      hard    nofile          65535
 
 # Install SonarScanner
 
-##Download Sonar Scanner here
+## Download Sonar Scanner here
 ```
 wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.4.0.2170-linux.zip
 ```
 
-##Add PATH env var to bin/sonar-scanner 
+## Add PATH env var to bin/sonar-scanner 
 ```
 echo $PATH
 PATH=$PATH:/opt/sonar-scanner-4.4.0.2170-linux/bin
