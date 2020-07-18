@@ -23,7 +23,7 @@ This repo is for reference to install SonarQube for Production environment using
 			<td>https://docs.sonarqube.org/latest/requirements/requirements/</td>
 		</tr>
 		<tr>
-			<td>Download/td>
+			<td>Download</td>
 			<td>https://www.sonarqube.org/downloads/</td>
 		</tr>
 	</tbody>
