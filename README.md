@@ -61,7 +61,7 @@ sonar.jdbc.url=jdbc:postgresql://localhost/sonarqube?currentSchema=sonarqubesche
 ...
 ```
 
-##Web Server
+## Web Server
 
 Update conf/sonar.properties
 ```
