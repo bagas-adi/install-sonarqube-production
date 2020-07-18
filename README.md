@@ -122,11 +122,11 @@ yum install java-11-openjdk-devel
 ## ElasticSearch config
 Edit max virtual memory at /etc/sysctl.conf
 ```
-vi /etc/sysctl.conf
-vm.max_map_count=262144
+echo "vm.max_map_count=262144" >> /etc/sysctl.conf
+sysctl -p
 ```
 
-Edit File Descriptor Limits at /etc/security/limits.conf
+Edit File Descriptor Limits at /etc/security/limits.conf. Then restart OS
 ```
 vi /etc/security/limits.conf
 ...
