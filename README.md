@@ -145,6 +145,22 @@ sonarqube      hard    nofile          65535
 ...
 ```
 
+## Install NodeJS
+```
+curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
+sudo yum install nodejs
+node --version
+```
+
+## Run Sonarqube
+```
+cd bin/linux*
+
+./sonar.sh console #run in foreground to troubleshoot
+or
+./sonar.sh start #run in background
+```
+
 
 # Install SonarScanner
 
@@ -160,3 +176,13 @@ PATH=$PATH:/opt/sonar-scanner-4.4.0.2170-linux/bin
 echo $PATH
 ```
 
+# External Access
+
+## Firewall Configuration
+```
+firewall-cmd --add-port=9000/tcp --permanent 
+firewall-cmd --add-port=9000/udp --permanent 
+firewall-cmd --add-service=http --permanent 
+firewall-cmd --add-service=https --permanent 
+firewall-cmd --reload 
+```
