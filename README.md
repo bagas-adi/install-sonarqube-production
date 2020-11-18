@@ -67,11 +67,11 @@ ALTER USER sonarqube SET search_path to sonarqubeschema;
 # TYPE  DATABASE        USER            ADDRESS                 METHOD
 
 # "local" is for Unix domain socket connections only
-local   all             all                                     ident
+local   all             all                                     md5
 # IPv4 local connections:
-host    all             all             127.0.0.1/32            ident
+host    all             all             127.0.0.1/32            md5
 # IPv6 local connections:
-host    all             all             ::1/128                 ident
+host    all             all             ::1/128                 md5
 ...
 ```
 4. Config SonarQube properties at conf/sonar.properties
@@ -113,6 +113,7 @@ Update conf/wrapper.conf
 #wrapper.java.command=/path/to/my/jdk/bin/java
 #wrapper.java.command=java
 wrapper.java.command=/usr/bin/java
+wrapper.java.command=/lib/jvm/java-11/bin/java
 ```
 
 ## OpenJDK 11
@@ -160,6 +161,46 @@ cd bin/linux*
 or
 ./sonar.sh start #run in background
 ```
+
+# Run Sonarqube as Service
+## Create service file for Sonarqube
+```
+cd /usr/lib/systemd/system
+
+vi sonarqube.service
+```
+
+## SonarQube.service content
+```
+[Unit]
+Description=SonarQube service
+After=syslog.target network.target
+
+[Service]
+Type=forking
+
+ExecStart=/opt/sonarqube/bin/linux-x86-64/sonar.sh start
+ExecStop=/opt/sonarqube/bin/linux-x86-64/sonar.sh stop
+
+User=sonarqube
+Group=sonarqube
+Restart=always
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
+```
+
+## Restart OS
+```
+reboot now
+```
+
+## Start with systemctl
+```
+systemctl start sonarqube
+```
+
 
 
 # Install SonarScanner
